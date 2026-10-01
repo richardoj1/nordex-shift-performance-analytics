@@ -1,0 +1,35 @@
+name: nordex
+
+services:
+  api:
+    build: .
+    image: nordex-app:local
+    ports:
+      - "127.0.0.1:8000:8000"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request,json; r=json.load(urllib.request.urlopen('http://localhost:8000/health')); assert r['model_loaded'] is True"
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  dashboard:
+    image: nordex-app:local
+    environment:
+      API_URL: http://api:8000
+    ports:
+      - "127.0.0.1:8501:8501"
+    depends_on:
+      api:
+        condition: service_healthy
+    command:
+      - streamlit
+      - run
+      - week3_day3_dashboard.py
+      - --server.address=0.0.0.0
+      - --server.port=8501
+      - --server.headless=true
