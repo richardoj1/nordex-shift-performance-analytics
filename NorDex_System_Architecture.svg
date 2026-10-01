@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#416278"/></marker></defs>
+<rect width="1200" height="760" fill="white"/>
+<g font-family="DejaVu Sans" fill="#162d40"><text x="40" y="42" font-size="26" font-weight="bold">NorDex application architecture</text>
+<text x="40" y="77" font-size="18">Verified local Docker deployment on 29 September 2026</text></g>
+<g fill="#edf3f6" stroke="#416278" stroke-width="2">
+<rect x="40" y="125" width="245" height="85"/><rect x="360" y="125" width="310" height="85"/>
+<rect x="780" y="125" width="350" height="85"/>
+<rect x="360" y="310" width="310" height="100"/><rect x="780" y="310" width="350" height="100"/>
+<rect x="40" y="515" width="290" height="100"/><rect x="440" y="515" width="345" height="100"/>
+</g><g font-family="DejaVu Sans" text-anchor="middle" fill="#162d40" font-size="20">
+<text x="162" y="157">User browser<tspan x="162" dy="30">localhost:8501</tspan></text>
+<text x="515" y="157">Streamlit dashboard<tspan x="515" dy="30">dashboard container</tspan></text>
+<text x="955" y="157">FastAPI service<tspan x="955" dy="30">api container on port 8000</tspan></text>
+<text x="515" y="346">Historical CSV<tspan x="515" dy="30">Charts and reference inputs</tspan></text>
+<text x="955" y="346">Saved fitted pipeline<tspan x="955" dy="30">Preprocessing and Random Forest</tspan></text>
+<text x="185" y="551">Model development<tspan x="185" dy="30">Evaluation notebooks</tspan></text>
+<text x="612" y="551">MLflow tracking and registry<tspan x="612" dy="30">Version 2 candidate lineage</tspan></text>
+</g><g stroke="#416278" stroke-width="2" fill="none" marker-end="url(#arrow)">
+<path d="M285 168 H360"/><path d="M670 168 H780"/>
+<path d="M515 310 V210"/><path d="M955 310 V210"/><path d="M330 565 H440"/>
+<path d="M785 565 H955 V410" stroke-dasharray="8 6"/>
+</g><g font-family="DejaVu Sans" fill="#162d40" font-size="17">
+<text x="687" y="113">HTTP JSON</text><text x="800" y="455">Export during development</text>
+<text x="40" y="670">Runtime API_URL = http://api:8000. MLflow is used during development, not queried by the current API.</text>
+<text x="40" y="710">Cloud hosting and container registry publication remain pending. No public URL is verified.</text></g></svg>
