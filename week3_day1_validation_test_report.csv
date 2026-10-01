@@ -1,0 +1,6 @@
+Test,Expected behaviour,Result
+Valid manufacturing records,Generate predictions,Passed
+Missing required column,Reject input,Passed
+Non-numeric predictor,Reject input,Passed
+Unseen categorical value,Generate predictions safely,Passed
+Saved pipeline reload,Reproduce original predictions,Passed
